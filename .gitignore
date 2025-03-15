@@ -8,8 +8,6 @@ __pycache__
 .idea
 .idea/
 .idea/misc.xml
-migrations/
-/migrations
 /media
 media/
 media
