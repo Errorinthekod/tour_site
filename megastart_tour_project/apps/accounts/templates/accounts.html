@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Authentication</title>
+    <title>Регистрация</title>
 </head>
 <body>
-<p>Succesfully </p>
-<ul>
-    <li>
-        User {{ user }}
-    </li>
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label>Имя пользователя:</label><br>
+        <input type="text" name="username"><br><br>
 
-    <li>
-        <a href="{% url 'accounts' %}">Home</a>
-    </li>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
 
-</ul>
+        <label>Пароль:</label><br>
+        <input type="password" name="password"><br><br>
 
+        <label>Повторите пароль:</label><br>
+        <input type="password" name="password2"><br><br>
 
-
+        <button type="submit">Зарегистрироваться</button>
+    </form>
 </body>
 </html>
