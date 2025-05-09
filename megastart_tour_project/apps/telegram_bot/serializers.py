@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from.models import *
+from megastart_tour_project.apps.telegram_bot.database.models import *
 
 class ApplySerializer(serializers.ModelSerializer):
     class Meta:

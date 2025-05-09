@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+CSRF_TRUSTED_ORIGINS = ['https://ea36-185-117-148-181.ngrok-free.app ']
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,18 +43,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.home',
     'apps.accounts',
     'apps.feedbacks',
-    'apps.tours',
+    'apps.home',
     'apps.payment',
+    'apps.telegram_bot',
+    'apps.tours',
 
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    # Swagger үчүн
-    'drf_spectacular',
+
+    'drf_spectacular', # Swagger үчүн
 
     'allauth',
     'allauth.account',
@@ -83,8 +87,8 @@ REST_FRAMEWORK = {
         # 'drf_social_oauth2.authentication.SocialAuthentication',        # соцсети
         'rest_framework.authentication.TokenAuthentication',            # токен DRF
         'rest_framework.authentication.BasicAuthentication',            # basic auth
-        'rest_framework.authentication.SessionAuthentication',          # по сессии (браузер, админка)
-        'rest_framework_simplejwt.authentication.JWTAuthentication',    # JWT TOKEN  |  МЫНА ОСЫ БІЗГЕ КЕРЕК
+        #'rest_framework.authentication.SessionAuthentication',          # по сессии (браузер, админка)
+        'rest_framework_simplejwt.authentication.JWTAuthentication',    # JWT TOKEN  |  ОСЫ БІЗГЕ КЕРЕК
     ),
 
 }
@@ -173,6 +177,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

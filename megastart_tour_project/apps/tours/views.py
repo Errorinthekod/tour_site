@@ -15,6 +15,7 @@ class TourPagePagination(PageNumberPagination):
 class TourViewSet(ReadOnlyModelViewSet):
     queryset = Tour.objects.all().order_by('-created_at') # Вывод данных в обратном порядке
     serializer_class = TourSerializer
+    permission_classes = [permissions.AllowAny]
     pagination_class = TourPagePagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name', 'is_active', 'min_age', 'author', 'price', 'available_spots', 'date']

@@ -25,7 +25,7 @@ class Tour(models.Model):
     author = models.ForeignKey('accounts.User', verbose_name='Автор тура', on_delete=models.CASCADE, related_name='tours')
     description = models.TextField('О туре')
     price = models.PositiveIntegerField('Цена', default=0)
-    is_active = models.BooleanField('В архиве', default=True)
+    is_active = models.BooleanField('В архиве', default=False)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     date = models.DateTimeField('Дата тура')
     available_spots = models.PositiveIntegerField('Свободные места', default=0)
