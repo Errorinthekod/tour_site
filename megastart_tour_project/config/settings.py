@@ -29,7 +29,13 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
-CSRF_TRUSTED_ORIGINS = ['https://ea36-185-117-148-181.ngrok-free.app ']
+# NGROK Settings
+CSRF_TRUSTED_ORIGINS = ['https://30c5-185-117-148-242.ngrok-free.app']
+
+
+# Webhook Settings
+TELEGRAM_BOT_TOKEN = '7563999976:AAH62ECNh_OxY-LPcKQXz6apv7Ap0DWVdm8'
+TELEGRAM_WEBHOOK_URL = 'https://30c5-185-117-148-242.ngrok-free.app/telegram_bot/telegram-webhook/'
 
 
 # Application definition
@@ -81,12 +87,13 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # OAuth2
         # 'drf_social_oauth2.authentication.SocialAuthentication',        # соцсети
-        'rest_framework.authentication.TokenAuthentication',            # токен DRF
-        'rest_framework.authentication.BasicAuthentication',            # basic auth
+        # 'rest_framework.authentication.TokenAuthentication',            # токен DRF
+        # 'rest_framework.authentication.BasicAuthentication',            # basic auth
         #'rest_framework.authentication.SessionAuthentication',          # по сессии (браузер, админка)
         'rest_framework_simplejwt.authentication.JWTAuthentication',    # JWT TOKEN  |  ОСЫ БІЗГЕ КЕРЕК
     ),

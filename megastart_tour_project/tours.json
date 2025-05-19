@@ -1,32 +1,6 @@
 [
   {
     "model": "admin.logentry",
-    "pk": 1,
-    "fields": {
-      "action_time": "2025-04-11T17:39:37.470Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Асхат мал",
-      "action_flag": 1,
-      "change_message": "[{\"added\": {}}]"
-    }
-  },
-  {
-    "model": "admin.logentry",
-    "pk": 2,
-    "fields": {
-      "action_time": "2025-04-14T18:16:31.692Z",
-      "user": 1,
-      "content_type": 7,
-      "object_id": "1",
-      "object_repr": "Асхат мал",
-      "action_flag": 3,
-      "change_message": ""
-    }
-  },
-  {
-    "model": "admin.logentry",
     "pk": 3,
     "fields": {
       "action_time": "2025-04-14T18:20:52.906Z",

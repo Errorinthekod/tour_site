@@ -24,8 +24,8 @@ class TourViewSet(ReadOnlyModelViewSet):
 class TourCreateViewSet(viewsets.ModelViewSet):  # вместо двух отдельных
     queryset = Tour.objects.all().order_by('-created_at')
     serializer_class = TourSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
+    permission_classes = [permissions.AllowAny]
+#IsAuthenticatedOrReadOnly
 
 
 class RatingViewSet(viewsets.ModelViewSet):

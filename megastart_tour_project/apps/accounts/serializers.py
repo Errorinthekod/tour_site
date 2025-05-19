@@ -46,6 +46,5 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
 
-
         return user
 """Келечекте бул файл өзгөрүш мүмкүн"""

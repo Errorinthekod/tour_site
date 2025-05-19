@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('apps.accounts.urls')),
     path('tours/',include('apps.tours.urls')),
+    path('telegram_bot/',include('apps.telegram_bot.urls')),
     path('',include('apps.accounts.urls')),
 
     # Swagger schema + UI
